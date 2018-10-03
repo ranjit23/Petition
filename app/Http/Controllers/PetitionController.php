@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class PetitionController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except' => ['index']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +19,9 @@ class PetitionController extends Controller
      */
     public function index()
     {
-        return view('petition.index');
+        $petitions = Petition::all();
+
+        return view('petition.index', compact('petitions'));
     }
 
     /**
@@ -35,7 +42,15 @@ class PetitionController extends Controller
      */
     public function store(Request $request)
     {
+        $petition = Petition::create([
+            'user_id' => auth()->id(),
+            'title' => request('title'),
+            'description' => request('description'),
+            'goal' => request('goal'),
+            'recipient' => request('recipient')
+        ]);
 
+        return redirect('/petition');
     }
 
     /**
@@ -46,7 +61,7 @@ class PetitionController extends Controller
      */
     public function show(Petition $petition)
     {
-        //
+        return view('petition.show');
     }
 
     /**

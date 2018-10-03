@@ -43,11 +43,25 @@
                             <label for="goal" class="col-md-4 col-form-label text-md-right">{{ __('Goal') }}</label>
 
                             <div class="col-md-6">
-                                <input id="goal" type="text" class="form-control{{ $errors->has('goal') ? ' is-invalid' : '' }}" name="goal" value="{{ old('goal') }}" required autofocus>
+                                <input id="goal" type="text" class="form-control{{ $errors->has('goal') ? ' is-invalid' : '' }}" name="goal" value="{{ old('goal') }}" required>
 
                                 @if ($errors->has('goal'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('goal') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="recipient" class="col-md-4 col-form-label text-md-right">{{ __('Recipient') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="recipient" type="email" class="form-control{{ $errors->has('recipient') ? ' is-invalid' : '' }}" name="recipient" value="{{ old('recipient') }}" required>
+
+                                @if ($errors->has('recipient'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('recipient') }}</strong>
                                     </span>
                                 @endif
                             </div>

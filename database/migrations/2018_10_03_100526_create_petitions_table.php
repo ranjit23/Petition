@@ -15,6 +15,13 @@ class CreatePetitionsTable extends Migration
     {
         Schema::create('petitions', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
+            $table->string('title');
+            $table->string('description');
+            $table->integer('votes')->default(0);
+            $table->integer('goal');
+            $table->string('recipient');
+            $table->integer('photos')->default(0);
             $table->timestamps();
         });
     }
