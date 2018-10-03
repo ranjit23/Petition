@@ -2,15 +2,15 @@
 
 namespace App;
 
-class Petition extends Model
+class Vote extends Model
 {
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function vote()
+    public function petition()
     {
-        return $this->hasMany(Vote::class);
+        return $this->belongsTo(Petition::class);
     }
 }

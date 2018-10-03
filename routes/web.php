@@ -22,3 +22,5 @@ Route::get('/petition', 'PetitionController@index');
 Route::get('/petition/create', 'PetitionController@create');
 Route::post('/petition/store', 'PetitionController@store');
 Route::get('/petition/{petition}/show', 'PetitionController@show');
+Route::get('/petition/{petition}/vote', 'VoteController@create');
+Route::get('/petition/{petition}/vote/store', 'VoteController@store');

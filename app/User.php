@@ -35,4 +35,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Petition::class);
     }
+
+    public function vote ()
+    {
+        return $this->hasMany(Vote::class);
+    }
 }
