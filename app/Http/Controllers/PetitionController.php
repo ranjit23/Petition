@@ -61,7 +61,9 @@ class PetitionController extends Controller
      */
     public function show(Petition $petition)
     {
-        return view('petition.show');
+        $petition = Petition::where('id', $petition->id)->first();
+
+        return view('petition.show', compact('petition'));
     }
 
     /**

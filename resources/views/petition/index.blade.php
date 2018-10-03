@@ -1,3 +1,5 @@
 @foreach($petitions as $petition)
-    {{ $petition->title }}
+    <a href="{{ $petition->id }}/show">{{ $petition->id }}
+    {{ $petition->title }}</a>
+    <br>
 @endforeach
