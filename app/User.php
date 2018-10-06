@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Petition;
+
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -28,4 +30,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function petition()
+    {
+        return $this->hasMany(Petition::class);
+    }
+
+    public function vote ()
+    {
+        return $this->hasMany(Vote::class);
+    }
 }
