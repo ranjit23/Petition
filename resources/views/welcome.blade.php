@@ -1,89 +1,128 @@
-<!doctype html>
+
+
+<!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
+			<title> Fight for Your Rights </title>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
+				</head>
+				<body>
+        @if (Route::has('login'))
 
-        <title>Petition</title>
+					<ul class="topnav">
+						<li>
+            @auth
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
+							<a href="{{ url('/home') }}">Home</a>
+						</li>
+						<li>
+							<a href="#About">ABOUT</a>
+						</li>
+						<li>
+							<a href="{{ url('/petition') }}">Browse Petition</a>
+						</li>
+            @else
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+						<li>
+							<a href="{{ route('register') }}">Register</a>
+						</li>
+						<li class="right">
+							<a href="{{ route('login') }}">Login</a>
 
-            .full-height {
-                height: 100vh;
-            }
+        @endauth
 
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                        <a href="{{ url('/petition') }}">Browse Petition</a>
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Petition
-                </div>
+						</li>
+					</ul>
+@endif
 
 
-            </div>
-        </div>
-    </body>
-</html>
+
+
+
+
+
+
+					<img src="{{ asset('svg/media/lawf.jpg') }}" class="img1" alt="No image" width="100%" >
+						<center>
+							<section class="sec2">
+								<div class="background">
+									<div class="left">
+										<div style="margin-top:200px; margin-left:50px;">
+											<h1 style="font-size:40px;">
+
+         WHAT IS A PETITION?</h1>
+											<p style="font-size:25px;">
+
+           A petition is a request signed by many people against or for a particular cause. Many people come together to support a particular
+           cause of their liking. A petition has a goal set for the number of people signing up for it. As a particular petition reaches the goal,
+                                    the petition is then forwarded to the legal authorities who then can take some legal action. </p>
+										</div>
+									</div>
+									<div class="right1">
+										<a name="About">
+											<img src="{{ asset('svg/media/what is a petition.jpg') }}" style="border-radius:50%; margin-top:100px;" alt="no image" class="what" />
+										</a>
+									</div>
+								</div>
+								<div class="start">
+									<img src="{{ asset('svg/media/why sign a peition.jpg') }}" alt="no image" class="why" />
+									<h1 style="font-size:30px;"> WHY SIGN A PETITION?</h1>
+									<p style="font-size:22px;">
+                                Witnessed something unjust happening in the society?
+                               Want to bring people together to support
+                                your cause?
+                             Sign up for a petition!
+          </p>
+								</div>
+								<div class="mid">
+									<img src="{{ asset('svg/media/online petition.jpg') }}" alt="no image" class="why" />
+									<h1 style="font-size:30px;">
+         ONLINE PETITION</h1>
+									<p style="font-size:22px;">
+
+                                An online petition can be signed by any person across the globe!
+                            It can be easily forwarded to people across globe supporting
+                                the   same cause. So go ahead and support a cause of your liking now!
+         </p>
+								</div>
+								<div class="end">
+									<img src="{{ asset('svg/media/want to raise your voice.jpg') }}" alt="no image" class="why" />
+									<h1 style="font-size:30px;">  WANT TO RAISE YOUR VOICE?</h1>
+									<p style="font-size:22px;">
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Then vote for a petition or start your own petition.
+         </p>
+								</div>
+								<br/>
+								<br/>
+								<a name="createyourpetition">
+									<div class="start">
+										<img src="{{ asset('svg/media/step1.png') }}" alt="no image" class="why" />
+										<h1 style="font-size:30px;">
+                                Click on 'start your own petition' </h1>
+									</div>
+									<div class="mid">
+										<img src="{{ asset('svg/media/step2.png') }}" alt="no image" class="why" />
+										<h1 style="font-size:30px;"> Fill in the required details </h1>
+										<br/>
+										<br/>
+										<br/>
+										<br/>
+										<a href="signup.html" class="button">Start your own Petition</a>
+									</div>
+									<div class="end">
+										<img src="{{ asset('svg/media/step3.png') }}" alt="no image" class="why" />
+										<h1 style="font-size:30px;">
+         Voila! Your own petition is created!</h1>
+									</div>
+								</a>
+							</section>
+							<footer>
+								<p align="center" style="font-size:25px;"> &copy; ONLINE PETITION </p>
+								<p align="center"> Developed and Maintained by</p>
+								<p> Ranjit Desai &nbsp;  &nbsp;  Arafaat Chaudhary &nbsp; &nbsp;   Gauri Deshpande  &nbsp;  &nbsp; Arpita Hirlekar </p>
+							</footer>
+						</center>
+					</body>
+				</html>
