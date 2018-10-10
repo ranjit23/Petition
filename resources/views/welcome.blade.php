@@ -15,21 +15,31 @@
 						<li>
             @auth
 
-							<a href="{{ url('/home') }}">Home</a>
-						</li>
-						<li>
-							<a href="#About">ABOUT</a>
-						</li>
-						<li>
-							<a href="{{ url('/petition') }}">Browse Petition</a>
-						</li>
+            <a href="{{ url('/home') }}">Home</a>
+          </li>
+          <li>
+            <a href="#About">ABOUT</a>
+          </li>
+          <li>
+            <a href="{{ url('/petition') }}">Browse Petition</a>
+          </li>
+
             @else
 
-						<li>
-							<a href="{{ route('register') }}">Register</a>
-						</li>
-						<li class="right">
-							<a href="{{ route('login') }}">Login</a>
+            <a href="{{ url('/home') }}">Home</a>
+          </li>
+          <li>
+            <a href="#About">ABOUT</a>
+          </li>
+          <li>
+            <a href="{{ url('/petition') }}">Browse Petition</a>
+          </li>
+          <li>
+
+          <a href="{{ route('register') }}">Register</a>
+        </li>
+        <li class="right">
+          <a href="{{ route('login') }}">Login</a>
 
         @endauth
 
@@ -45,9 +55,9 @@
 
 
 					<img src="{{ asset('svg/media/lawf.jpg') }}" class="img1" alt="No image" width="100%" >
-						<center>
-							<section class="sec2">
-								<div class="background">
+
+
+
 									<div class="left">
 										<div style="margin-top:200px; margin-left:50px;">
 											<h1 style="font-size:40px;">
@@ -65,7 +75,7 @@
 											<img src="{{ asset('svg/media/what is a petition.jpg') }}" style="border-radius:50%; margin-top:100px;" alt="no image" class="what" />
 										</a>
 									</div>
-								</div>
+
 								<div class="start">
 									<img src="{{ asset('svg/media/why sign a peition.jpg') }}" alt="no image" class="why" />
 									<h1 style="font-size:30px;"> WHY SIGN A PETITION?</h1>
@@ -94,10 +104,14 @@
            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Then vote for a petition or start your own petition.
          </p>
 								</div>
+
+
 								<br/>
 								<br/>
-								<a name="createyourpetition">
-									<div class="start">
+								<a name="createyourpetition"></a>
+
+
+						<div class="start">
 										<img src="{{ asset('svg/media/step1.png') }}" alt="no image" class="why" />
 										<h1 style="font-size:30px;">
                                 Click on 'start your own petition' </h1>
@@ -105,24 +119,32 @@
 									<div class="mid">
 										<img src="{{ asset('svg/media/step2.png') }}" alt="no image" class="why" />
 										<h1 style="font-size:30px;"> Fill in the required details </h1>
-										<br/>
-										<br/>
-										<br/>
-										<br/>
-										<a href="signup.html" class="button">Start your own Petition</a>
-									</div>
-									<div class="end">
-										<img src="{{ asset('svg/media/step3.png') }}" alt="no image" class="why" />
-										<h1 style="font-size:30px;">
+                    		</div>
+                        <div class="end">
+
+
+                    <img src="{{ asset('svg/media/step3.png') }}" alt="no image" class="why" />
+                    <h1 style="font-size:30px;">
          Voila! Your own petition is created!</h1>
-									</div>
-								</a>
-							</section>
-							<footer>
-								<p align="center" style="font-size:25px;"> &copy; ONLINE PETITION </p>
-								<p align="center"> Developed and Maintained by</p>
-								<p> Ranjit Desai &nbsp;  &nbsp;  Arafaat Chaudhary &nbsp; &nbsp;   Gauri Deshpande  &nbsp;  &nbsp; Arpita Hirlekar </p>
-							</footer>
-						</center>
+           </div>
+
+
+
+
+           <a href="{{ url('/register') }}" class="button" style="margin-top:80px; margin-left: 80px;">Start your own Petition</a>
+
+
+
+        <footer style="margin-top:100px;">
+        <p align="center" style="font-size:25px;"> &copy; ONLINE PETITION </p>
+
+              <p align="center"> Developed and Maintained by</p>
+
+            <center>
+
+              <p> Ranjit Desai &nbsp;  &nbsp;  Arafaat Chaudhary &nbsp; &nbsp;   Gauri Deshpande  &nbsp;  &nbsp; Arpita Hirlekar </p>
+      </center></footer>
+
+
 					</body>
 				</html>
