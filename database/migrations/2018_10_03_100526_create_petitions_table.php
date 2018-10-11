@@ -17,7 +17,7 @@ class CreatePetitionsTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->string('title');
-            $table->string('description');
+            $table->char('description', 10000); 
             $table->integer('votes')->default(0);
             $table->integer('goal');
             $table->string('recipient');
