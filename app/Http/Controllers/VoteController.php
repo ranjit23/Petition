@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Petition;
 use App\Vote;
+
 use Illuminate\Http\Request;
 
 class VoteController extends Controller
@@ -34,9 +35,14 @@ class VoteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Petition $petition)
     {
-        //
+        $vote = Vote::create([
+          'user_id' => auth()->id(),
+          'petition_id' => $petition->id
+        ]);
+
+        Petition::where('id', $petition->id)->increment('votes');
     }
 
     /**

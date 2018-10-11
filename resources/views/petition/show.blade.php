@@ -46,7 +46,7 @@
         Votes <progress value="22" max="100">
         </progress>
         <br /> <br />
-        <a href="vote.html" class="button"> Vote </a>
+        <a href="/petition/{{ $petition->id }}/vote/store" class="button"> Vote </a>
 
 
 
