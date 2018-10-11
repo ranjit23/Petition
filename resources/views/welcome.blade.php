@@ -14,15 +14,20 @@
 					<ul class="topnav">
 						<li>
             @auth
+						<a href="{{ url('/home') }}">Home</a>
+					</li>
+					<li>
+						<a href="#About">ABOUT</a>
+					</li>
+					<li>
+						<a href="{{ url('/petition') }}">Browse Petition</a>
+					</li>
+					<li>
 
-            <a href="{{ url('/home') }}">Home</a>
-          </li>
-          <li>
-            <a href="#About">ABOUT</a>
-          </li>
-          <li>
-            <a href="{{ url('/petition') }}">Browse Petition</a>
-          </li>
+					<a href="{{ route('register') }}">Register</a>
+					</li>
+					<li class="right">
+					<a href="{{ route('login') }}">Login</a>
 
             @else
 

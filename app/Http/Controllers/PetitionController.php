@@ -50,7 +50,7 @@ class PetitionController extends Controller
             'recipient' => request('recipient')
         ]);
 
-        return redirect('/petition');
+        return redirect('/petiton');
     }
 
     /**
