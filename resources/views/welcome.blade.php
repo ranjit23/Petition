@@ -14,7 +14,7 @@
 					<ul class="topnav">
 						<li>
             @auth
-						<a href="{{ url('/home') }}">Home</a>
+						<a href="{{ url('/') }}">Home</a>
 					</li>
 					<li>
 						<a href="#About">ABOUT</a>
@@ -22,19 +22,27 @@
 					<li>
 						<a href="{{ url('/petition') }}">Browse Petition</a>
 					</li>
+
 					<li>
 
-					<a href="{{ route('register') }}">Register</a>
-					</li>
-					<li class="right">
-					<a href="{{ route('login') }}">Login</a>
+
+
+									<a class="right" href="{{ route('logout') }}"
+										 onclick="event.preventDefault();
+																	 document.getElementById('logout-form').submit();">
+											{{ __('Logout') }}
+									</a>
+</li>
+									<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+											@csrf
+									</form>
 
             @else
 
-            <a href="{{ url('/home') }}">Home</a>
+            <a href="{{ url('/') }}">Home</a>
           </li>
           <li>
-            <a href="#About">ABOUT</a>
+            <a href="#About">About</a>
           </li>
           <li>
             <a href="{{ url('/petition') }}">Browse Petition</a>
@@ -67,6 +75,8 @@
 										<div style="margin-top:200px; margin-left:50px;">
 											<h1 style="font-size:40px;">
 
+
+
          WHAT IS A PETITION?</h1>
 											<p style="font-size:25px;">
 
@@ -82,32 +92,46 @@
 									</div>
 
 								<div class="start">
-									<img src="{{ asset('svg/media/why sign a peition.jpg') }}" alt="no image" class="why" />
-									<h1 style="font-size:30px;"> WHY SIGN A PETITION?</h1>
+								<center>
+
+									<img src="{{ asset('svg/media/why sign a peition.jpg') }}" alt="no image" class="why" /> </center>
+									<center>
+
+									<h1 style="font-size:30px;"> WHY SIGN A PETITION?</h1></center>
+								<center>
+
 									<p style="font-size:22px;">
                                 Witnessed something unjust happening in the society?
                                Want to bring people together to support
                                 your cause?
                              Sign up for a petition!
-          </p>
+          </p></center>
 								</div>
 								<div class="mid">
 									<img src="{{ asset('svg/media/online petition.jpg') }}" alt="no image" class="why" />
+								<center>
+
 									<h1 style="font-size:30px;">
-         ONLINE PETITION</h1>
+         ONLINE PETITION</h1></center>
+							<center>
+
 									<p style="font-size:22px;">
 
                                 An online petition can be signed by any person across the globe!
                             It can be easily forwarded to people across globe supporting
                                 the   same cause. So go ahead and support a cause of your liking now!
-         </p>
+         </p></center>
 								</div>
 								<div class="end">
 									<img src="{{ asset('svg/media/want to raise your voice.jpg') }}" alt="no image" class="why" />
-									<h1 style="font-size:30px;">  WANT TO RAISE YOUR VOICE?</h1>
+								<center>
+
+									<h1 style="font-size:30px;">  WANT TO RAISE YOUR VOICE?</h1></center>
+									<center>
+
 									<p style="font-size:22px;">
            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Then vote for a petition or start your own petition.
-         </p>
+         </p></center>
 								</div>
 
 
@@ -117,27 +141,39 @@
 
 
 						<div class="start">
-										<img src="{{ asset('svg/media/step1.png') }}" alt="no image" class="why" />
+								<center>
+
+										<img src="{{ asset('svg/media/step1.png') }}" alt="no image" class="why" /></center>
+										<center>
+
 										<h1 style="font-size:30px;">
-                                Click on 'start your own petition' </h1>
+                                Click on 'start your own petition' </h1> </center>
 									</div>
 									<div class="mid">
-										<img src="{{ asset('svg/media/step2.png') }}" alt="no image" class="why" />
+									<center>
+
+										<img src="{{ asset('svg/media/step2.png') }}" alt="no image" class="why" /></center>
 										<h1 style="font-size:30px;"> Fill in the required details </h1>
                     		</div>
                         <div class="end">
 
 
-                    <img src="{{ asset('svg/media/step3.png') }}" alt="no image" class="why" />
-                    <h1 style="font-size:30px;">
-         Voila! Your own petition is created!</h1>
+                  <center>
+
+									  <img src="{{ asset('svg/media/step3.png') }}" alt="no image" class="why" /></center><br /><br />
+                  <center>
+
+									  <h1 style="font-size:30px;">
+         Voila! Your own petition is created!</h1></center>
            </div>
 
 
 
 
-           <a href="{{ url('/register') }}" class="button" style="margin-top:80px; margin-left: 80px;">Start your own Petition</a>
+      <center>
 
+			     <a href="{{ url('/register') }}" class="button" style="margin-top:80px; ">Start your own Petition</a>
+</center>
 
 
         <footer style="margin-top:100px;">

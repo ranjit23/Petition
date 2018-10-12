@@ -21,7 +21,7 @@
 
         <ul class="topnav">
           <li>
-            <a class="active" href="home.html">HOME</a>
+            <a class="active" href="{{ url('/')}}">HOME</a>
           </li>
 
           <li>
@@ -46,9 +46,13 @@
         Votes <progress value="22" max="100">
         </progress>
         <br /> <br />
+          @if (Route::has('login'))
+            @auth
         <a href="/petition/{{ $petition->id }}/vote/store" class="button"> Vote </a>
-
-
+        @else
+        <a href="{{ route('register') }}" class="button"> Vote </a>
+@endauth
+@endif
 
 
 </center>

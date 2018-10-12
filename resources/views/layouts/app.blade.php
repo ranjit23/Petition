@@ -23,9 +23,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Petition') }}
-                </a>
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -40,7 +38,7 @@
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/petition') }}">{{ __('Broswse Petitions') }}</a>
+                            <a class="nav-link" href="{{ url('/petition') }}">{{ __('Browse Petitions') }}</a>
                         </li>
                         @guest
                             <li class="nav-item">

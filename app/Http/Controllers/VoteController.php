@@ -37,12 +37,21 @@ class VoteController extends Controller
      */
     public function store(Request $request, Petition $petition)
     {
-        $vote = Vote::create([
-          'user_id' => auth()->id(),
-          'petition_id' => $petition->id
-        ]);
+        if(Vote::where('user_id', auth()->id())->where('petition_id', $petition->id)->exists())
+        {
+            return redirect('/petition');
+        }
+        else
+        {
+            $vote = Vote::create([
+                'user_id' => auth()->id(),
+                'petition_id' => $petition->id
+              ]);
 
-        Petition::where('id', $petition->id)->increment('votes');
+              Petition::where('id', $petition->id)->increment('votes');
+
+              return redirect('/');
+        }
     }
 
     /**

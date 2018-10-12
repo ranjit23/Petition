@@ -17,11 +17,10 @@ class CreatePetitionsTable extends Migration
             $table->increments('id');
             $table->integer('user_id');
             $table->string('title');
-            $table->char('description', 10000); 
+            $table->text('description', 1000);
             $table->integer('votes')->default(0);
             $table->integer('goal');
             $table->string('recipient');
-            $table->integer('photos')->default(0);
             $table->timestamps();
         });
     }

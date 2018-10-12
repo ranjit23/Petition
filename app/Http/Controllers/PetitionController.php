@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Petition;
 use Illuminate\Http\Request;
+use Image;
 
 class PetitionController extends Controller
 {
@@ -47,8 +48,15 @@ class PetitionController extends Controller
             'title' => request('title'),
             'description' => request('description'),
             'goal' => request('goal'),
-            'recipient' => request('recipient')
-        ]);
+            'recipient' => request('recipient'),
+
+
+    ]);
+
+
+
+
+
 
         return redirect('/home');
     }
